@@ -12,6 +12,9 @@ int f1/0
 no shut 
 ip addr 192.88.123.1 255.255.255.192
 
+int Lo0
+ip addr 1.1.1.1 255.255.255.0
+
 end
 write
 

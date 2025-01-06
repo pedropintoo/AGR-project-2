@@ -1,0 +1,16 @@
+2025-01-06T11:21:47.722Z HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+2025-01-06T11:21:47.722Z HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 54607.
+2025-01-06T11:21:47.728Z HYPERVISOR: exec_cmd: hypervisor version 
+2025-01-06T11:21:47.729Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/guipc/LEI/3ºAno/1ºSemestre/AGR/AGR-project-2/src/project-files/dynamips 
+2025-01-06T11:21:47.729Z GENERAL: working_dir=/home/guipc/LEI/3ºAno/1ºSemestre/AGR/AGR-project-2/src/project-files/dynamips
+2025-01-06T11:21:47.729Z HYPERVISOR: exec_cmd: ethsw create Switch6 
+2025-01-06T11:21:48.261Z HYPERVISOR: exec_cmd: nio create_udp udp-0bd0a3b0-a660-4ed6-9fec-496d6d8b2ca7 10001 127.0.0.1 10000 
+2025-01-06T11:21:48.262Z HYPERVISOR: exec_cmd: ethsw add_nio Switch6 udp-0bd0a3b0-a660-4ed6-9fec-496d6d8b2ca7 
+2025-01-06T11:21:48.263Z HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0bd0a3b0-a660-4ed6-9fec-496d6d8b2ca7 1 
+2025-01-06T11:21:48.504Z HYPERVISOR: exec_cmd: nio create_udp udp-c5cec079-6dc3-4c1b-9d37-040b01b66540 10004 127.0.0.1 10005 
+2025-01-06T11:21:48.505Z HYPERVISOR: exec_cmd: ethsw add_nio Switch6 udp-c5cec079-6dc3-4c1b-9d37-040b01b66540 
+2025-01-06T11:21:48.525Z HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-c5cec079-6dc3-4c1b-9d37-040b01b66540 1 
+2025-01-06T13:04:04.219Z HYPERVISOR: exec_cmd: ethsw delete Switch6 
+2025-01-06T13:04:04.254Z HYPERVISOR: exec_cmd: hypervisor stop 
+2025-01-06T13:04:04.715Z HYPERVISOR: Stopped.
+2025-01-06T13:04:04.715Z GENERAL: reset done.

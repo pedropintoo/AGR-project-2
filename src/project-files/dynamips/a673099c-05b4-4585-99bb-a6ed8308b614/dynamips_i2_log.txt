@@ -1,0 +1,37 @@
+2025-01-06T11:21:47.499Z HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+2025-01-06T11:21:47.499Z HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 50125.
+2025-01-06T11:21:47.506Z HYPERVISOR: exec_cmd: hypervisor version 
+2025-01-06T11:21:47.506Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/guipc/LEI/3ºAno/1ºSemestre/AGR/AGR-project-2/src/project-files/dynamips 
+2025-01-06T11:21:47.506Z GENERAL: working_dir=/home/guipc/LEI/3ºAno/1ºSemestre/AGR/AGR-project-2/src/project-files/dynamips
+2025-01-06T11:21:47.507Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/guipc/LEI/3ºAno/1ºSemestre/AGR/AGR-project-2/src/project-files/dynamips/7b8ba19a-59fd-4e67-92ad-3579451f2681 
+2025-01-06T11:21:47.507Z GENERAL: working_dir=/home/guipc/LEI/3ºAno/1ºSemestre/AGR/AGR-project-2/src/project-files/dynamips/7b8ba19a-59fd-4e67-92ad-3579451f2681
+2025-01-06T11:21:47.507Z HYPERVISOR: exec_cmd: vm create Aveiro 5 c3725 
+2025-01-06T11:21:47.507Z VM: VM Aveiro created.
+2025-01-06T11:21:47.508Z HYPERVISOR: exec_cmd: vm set_con_tcp_port Aveiro 5004 
+2025-01-06T11:21:47.508Z HYPERVISOR: exec_cmd: c3725 get_mac_addr Aveiro 
+2025-01-06T11:21:47.508Z HYPERVISOR: exec_cmd: vm set_disk0 Aveiro 0 
+2025-01-06T11:21:47.509Z HYPERVISOR: exec_cmd: vm get_status Aveiro 
+2025-01-06T11:21:47.509Z HYPERVISOR: exec_cmd: vm set_idle_pc Aveiro 0x60a68e70 
+2025-01-06T11:21:47.510Z HYPERVISOR: exec_cmd: vm set_ios Aveiro /home/guipc/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21(1).image 
+2025-01-06T11:21:47.510Z HYPERVISOR: exec_cmd: c3725 set_mac_addr Aveiro c205.3e94.0000 
+2025-01-06T11:21:47.510Z HYPERVISOR: exec_cmd: vm set_nvram Aveiro 256 
+2025-01-06T11:21:47.511Z HYPERVISOR: exec_cmd: vm get_status Aveiro 
+2025-01-06T11:21:47.511Z HYPERVISOR: exec_cmd: vm slot_add_binding Aveiro 1 0 NM-1FE-TX 
+2025-01-06T11:21:47.512Z HYPERVISOR: exec_cmd: vm get_status Aveiro 
+2025-01-06T11:21:47.512Z HYPERVISOR: exec_cmd: vm slot_add_binding Aveiro 2 0 NM-16ESW 
+2025-01-06T11:21:51.513Z HYPERVISOR: exec_cmd: nio create_udp udp-41bff0cd-780b-4c64-bccd-c46ceb2587ac 10062 127.0.0.1 10063 
+2025-01-06T11:21:51.723Z HYPERVISOR: exec_cmd: vm slot_add_nio_binding Aveiro 0 0 udp-41bff0cd-780b-4c64-bccd-c46ceb2587ac 
+2025-01-06T11:21:51.723Z HYPERVISOR: exec_cmd: vm get_status Aveiro 
+2025-01-06T11:21:51.838Z HYPERVISOR: exec_cmd: nio create_udp udp-e2712cd9-bb24-4a0b-b5d5-343c9c044b20 10066 127.0.0.1 10067 
+2025-01-06T11:21:51.840Z HYPERVISOR: exec_cmd: vm slot_add_nio_binding Aveiro 0 1 udp-e2712cd9-bb24-4a0b-b5d5-343c9c044b20 
+2025-01-06T11:21:51.841Z HYPERVISOR: exec_cmd: vm get_status Aveiro 
+2025-01-06T12:12:43.902Z HYPERVISOR: exec_cmd: vm set_ios Aveiro /home/guipc/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21(1).image 
+2025-01-06T13:04:04.183Z HYPERVISOR: exec_cmd: vm get_status Aveiro 
+2025-01-06T13:04:04.183Z HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+2025-01-06T13:04:04.604Z HYPERVISOR: exec_cmd: vm get_status Aveiro 
+2025-01-06T13:04:04.605Z HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+2025-01-06T13:04:04.605Z HYPERVISOR: exec_cmd: vm delete Aveiro 
+2025-01-06T13:04:04.605Z VM: VM Aveiro destroyed.
+2025-01-06T13:04:04.605Z HYPERVISOR: exec_cmd: hypervisor stop 
+2025-01-06T13:04:04.933Z HYPERVISOR: Stopped.
+2025-01-06T13:04:04.933Z GENERAL: reset done.

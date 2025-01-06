@@ -20,5 +20,26 @@ int f2/1
 no shut
 ip addr 100.100.100.2 255.255.255.0
 
-end
+int Lo0
+ip addr 8.8.8.8 255.255.255.0
+
+crypto isakmp policy 30
+authentication pre-share
+crypto isakmp key leirialondres123 address 4.4.4.4
+crypto ipsec transform-set auth_ciphT ah-sha-hmac esp-des
+crypto ipsec profile LeiriaLondresIpsec
+set transform-set auth_ciphT
+exit
+
+int Tunnel 1
+ip addr 10.1.2.2 255.255.255.252
+tunnel source Lo0
+tunnel destination 4.4.4.4
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile LeiriaLondresIpsec
+exit
+
+ip route 192.88.125.64 255.255.255.192 Tunnel1
+
+end 
 write

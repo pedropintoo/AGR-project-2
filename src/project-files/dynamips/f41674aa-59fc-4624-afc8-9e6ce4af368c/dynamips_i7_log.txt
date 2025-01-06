@@ -1,0 +1,16 @@
+2025-01-06T11:21:47.694Z HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+2025-01-06T11:21:47.694Z HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 44117.
+2025-01-06T11:21:47.700Z HYPERVISOR: exec_cmd: hypervisor version 
+2025-01-06T11:21:47.701Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/guipc/LEI/3ºAno/1ºSemestre/AGR/AGR-project-2/src/project-files/dynamips 
+2025-01-06T11:21:47.701Z GENERAL: working_dir=/home/guipc/LEI/3ºAno/1ºSemestre/AGR/AGR-project-2/src/project-files/dynamips
+2025-01-06T11:21:47.701Z HYPERVISOR: exec_cmd: ethsw create Switch5 
+2025-01-06T11:21:48.388Z HYPERVISOR: exec_cmd: nio create_udp udp-65e3da43-ae46-45fe-a0bc-83ec288a274e 10003 127.0.0.1 10002 
+2025-01-06T11:21:48.389Z HYPERVISOR: exec_cmd: ethsw add_nio Switch5 udp-65e3da43-ae46-45fe-a0bc-83ec288a274e 
+2025-01-06T11:21:48.395Z HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-65e3da43-ae46-45fe-a0bc-83ec288a274e 1 
+2025-01-06T11:21:50.073Z HYPERVISOR: exec_cmd: nio create_udp udp-325c1321-c86f-4a17-9e0b-27645a02ad97 10033 127.0.0.1 10032 
+2025-01-06T11:21:50.073Z HYPERVISOR: exec_cmd: ethsw add_nio Switch5 udp-325c1321-c86f-4a17-9e0b-27645a02ad97 
+2025-01-06T11:21:50.085Z HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-325c1321-c86f-4a17-9e0b-27645a02ad97 1 
+2025-01-06T13:04:04.220Z HYPERVISOR: exec_cmd: ethsw delete Switch5 
+2025-01-06T13:04:04.253Z HYPERVISOR: exec_cmd: hypervisor stop 
+2025-01-06T13:04:04.690Z HYPERVISOR: Stopped.
+2025-01-06T13:04:04.690Z GENERAL: reset done.

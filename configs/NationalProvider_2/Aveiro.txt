@@ -1,0 +1,15 @@
+conf t
+
+int f0/0
+no shut
+ip addr 192.88.123.5 255.255.255.192
+
+int f0/1
+no shut
+ip addr 192.88.124.1 255.255.255.252
+
+int Lo0
+ip addr 6.6.6.6 255.255.255.0
+
+end
+write

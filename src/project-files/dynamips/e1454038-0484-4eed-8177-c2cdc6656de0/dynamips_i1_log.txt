@@ -1,0 +1,34 @@
+2025-01-06T11:21:47.444Z HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+2025-01-06T11:21:47.444Z HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 43289.
+2025-01-06T11:21:47.454Z HYPERVISOR: exec_cmd: hypervisor version 
+2025-01-06T11:21:47.455Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/guipc/LEI/3ºAno/1ºSemestre/AGR/AGR-project-2/src/project-files/dynamips 
+2025-01-06T11:21:47.455Z GENERAL: working_dir=/home/guipc/LEI/3ºAno/1ºSemestre/AGR/AGR-project-2/src/project-files/dynamips
+2025-01-06T11:21:47.455Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/guipc/LEI/3ºAno/1ºSemestre/AGR/AGR-project-2/src/project-files/dynamips/1b2e1647-8807-400e-b405-472f66b6aa93 
+2025-01-06T11:21:47.455Z GENERAL: working_dir=/home/guipc/LEI/3ºAno/1ºSemestre/AGR/AGR-project-2/src/project-files/dynamips/1b2e1647-8807-400e-b405-472f66b6aa93
+2025-01-06T11:21:47.455Z HYPERVISOR: exec_cmd: vm create Coimbra 4 c3725 
+2025-01-06T11:21:47.456Z VM: VM Coimbra created.
+2025-01-06T11:21:47.456Z HYPERVISOR: exec_cmd: vm set_con_tcp_port Coimbra 5003 
+2025-01-06T11:21:47.456Z HYPERVISOR: exec_cmd: c3725 get_mac_addr Coimbra 
+2025-01-06T11:21:47.457Z HYPERVISOR: exec_cmd: vm set_disk0 Coimbra 0 
+2025-01-06T11:21:47.457Z HYPERVISOR: exec_cmd: vm get_status Coimbra 
+2025-01-06T11:21:47.458Z HYPERVISOR: exec_cmd: vm set_idle_pc Coimbra 0x60a68e70 
+2025-01-06T11:21:47.458Z HYPERVISOR: exec_cmd: vm set_ios Coimbra /home/guipc/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21(1).image 
+2025-01-06T11:21:47.459Z HYPERVISOR: exec_cmd: c3725 set_mac_addr Coimbra c204.3e77.0000 
+2025-01-06T11:21:47.459Z HYPERVISOR: exec_cmd: vm set_nvram Coimbra 256 
+2025-01-06T11:21:47.460Z HYPERVISOR: exec_cmd: vm get_status Coimbra 
+2025-01-06T11:21:47.460Z HYPERVISOR: exec_cmd: vm slot_add_binding Coimbra 1 0 NM-1FE-TX 
+2025-01-06T11:21:47.460Z HYPERVISOR: exec_cmd: vm get_status Coimbra 
+2025-01-06T11:21:47.461Z HYPERVISOR: exec_cmd: vm slot_add_binding Coimbra 2 0 NM-16ESW 
+2025-01-06T11:21:51.152Z HYPERVISOR: exec_cmd: nio create_udp udp-b33fefe1-d657-40c5-bf07-adbfc47a66fa 10058 127.0.0.1 10059 
+2025-01-06T11:21:51.362Z HYPERVISOR: exec_cmd: vm slot_add_nio_binding Coimbra 0 0 udp-b33fefe1-d657-40c5-bf07-adbfc47a66fa 
+2025-01-06T11:21:51.362Z HYPERVISOR: exec_cmd: vm get_status Coimbra 
+2025-01-06T12:12:41.927Z HYPERVISOR: exec_cmd: vm set_ios Coimbra /home/guipc/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21(1).image 
+2025-01-06T13:04:04.183Z HYPERVISOR: exec_cmd: vm get_status Coimbra 
+2025-01-06T13:04:04.183Z HYPERVISOR: exec_cmd: vm extract_config Coimbra 
+2025-01-06T13:04:04.293Z HYPERVISOR: exec_cmd: vm get_status Coimbra 
+2025-01-06T13:04:04.293Z HYPERVISOR: exec_cmd: vm extract_config Coimbra 
+2025-01-06T13:04:04.294Z HYPERVISOR: exec_cmd: vm delete Coimbra 
+2025-01-06T13:04:04.294Z VM: VM Coimbra destroyed.
+2025-01-06T13:04:04.294Z HYPERVISOR: exec_cmd: hypervisor stop 
+2025-01-06T13:04:04.459Z HYPERVISOR: Stopped.
+2025-01-06T13:04:04.459Z GENERAL: reset done.
