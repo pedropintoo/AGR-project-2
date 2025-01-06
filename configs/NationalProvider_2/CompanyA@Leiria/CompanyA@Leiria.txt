@@ -12,7 +12,7 @@ ip ospf 1 area 0
 
 int Lo0
 ip addr 4.4.4.4 255.255.255.0
-ip ospf 1 area 0
+ip ospf network point-to-point
 
 crypto isakmp policy 30
 authentication pre-share
@@ -30,7 +30,7 @@ tunnel mode ipsec ipv4
 tunnel protection ipsec profile LeiriaLondresIpsec
 exit
 
-ip route 192.122.12.0 255.255.255.128 Tunnel1
+ip route 92.122.12.10 255.255.255.128 Tunnel1
 
 end 
 write

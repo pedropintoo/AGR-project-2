@@ -7,6 +7,32 @@ ip ospf 1 area 0
 
 int Lo0
 ip addr 5.5.5.5 255.255.255.0
+ip ospf network point-to-point
+
+router bgp 8657
+distance bgp 100 100 100
+neighbor 192.88.123.2 remote-as 8657
+neighbor 192.88.123.1 remote-as 8657
+neighbor 192.88.123.5 remote-as 8657
+neighbor 192.88.123.3 remote-as 8657
+redistribute ospf 1
+exit
+
+ip bgp-community new-format
+ip community-list 1 permit 8657:1
+ip community-list 2 permit 8657:2
+route-map routes-in permit 10
+match community 1
+set local-preference 100
+route-map routes-in permit 20
+match community 2
+set local-preference 200
+router bgp 8657
+neighbor 192.88.123.1 route-map routes-in in
+neighbor 192.88.123.2 route-map routes-in in
+
+router ospf 1
+no redistribute bgp 8657 subnets
 
 end
 write

@@ -2,7 +2,7 @@ conf t
 
 int f0/0
 no shut
-ip addr 192.1.1.146 255.255.252
+ip addr 192.1.1.146 255.255.255.252
 
 int f0/1
 no shut
@@ -15,6 +15,43 @@ ip ospf 1 area 0
 
 int Lo0
 ip addr 1.1.1.1 255.255.255.0
+ip ospf network point-to-point
+
+ip as-path access-list 1 permit ^$
+route-map routes-out
+match as-path 1
+
+router bgp 8657
+neighbor 192.1.1.145 remote-as 4891
+neighbor 192.1.1.145 route-map routes-out out
+neighbor 192.1.1.134 remote-as 4589
+neighbor 192.1.1.134 route-map routes-out out
+
+neighbor 192.88.123.2 remote-as 8657
+neighbor 192.88.123.2 next-hop-self
+neighbor 192.88.123.3 remote-as 8657
+neighbor 192.88.123.3 next-hop-self
+neighbor 192.88.123.4 remote-as 8657
+neighbor 192.88.123.4 next-hop-self
+neighbor 192.88.123.5 remote-as 8657
+neighbor 192.88.123.5 next-hop-self
+
+redistribute ospf 1
+exit
+
+ip bgp-community new-format
+route-map routesA-out permit 10
+match route-type external
+set community 8657:1
+router bgp 8657
+neighbor 192.88.123.4 route-map routesA-out out
+neighbor 192.88.123.4 send-community
+neighbor 192.88.123.5 route-map routesA-out out
+neighbor 192.88.123.5 send-community
+
+router ospf 1
+no redistribute bgp 8657 subnets
+default-information originate always metric 50
 
 end
 write

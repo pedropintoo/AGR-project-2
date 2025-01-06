@@ -2,23 +2,26 @@ conf t
 
 int f0/0
 no shut
-ip addr 192.1.1.138 255.255.255.252
+ip addr 100.100.100.2 255.255.255.0
 
 int f0/1
 no shut
-ip addr 192.1.1.134 255.255.255.252
+ip addr 192.1.1.138 255.255.255.252
 
 int f1/0
 no shut
-ip addr 192.1.1.142 255.255.255.252
+ip addr 192.1.1.134 255.255.255.252
 
 int f2/0
+no switchport
+no shut
+ip addr 192.1.1.142 255.255.255.252
+
+int f2/1
+no switchport
 no shut
 ip addr 192.122.12.2 255.255.255.128
 
-int f2/1
-no shut
-ip addr 100.100.100.2 255.255.255.0
 
 int Lo0
 ip addr 8.8.8.8 255.255.255.0
@@ -40,6 +43,20 @@ tunnel protection ipsec profile LeiriaLondresIpsec
 exit
 
 ip route 192.88.125.64 255.255.255.192 Tunnel1
+ip route 0.0.0.0 0.0.0.0 f0/0
+
+router bgp 4589
+neighbor 192.1.1.137 remote-as 4891
+neighbor 192.1.1.137 default-originate
+
+neighbor 192.1.1.133 remote-as 8657
+neighbor 192.1.1.133 default-originate
+
+neighbor 192.1.1.141 remote-as 8657
+neighbor 192.1.1.141 default-originate
+
+network 192.122.12.0 mask 255.255.255.128
+network 8.8.8.0 mask 255.255.255.0
 
 end 
 write
