@@ -700,6 +700,15 @@
                 "x": 342,
                 "y": -10,
                 "z": 2
+            },
+            {
+                "drawing_id": "4b54f7e5-8288-4ef5-8180-4609588e9ac6",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"91\" height=\"28\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#aa5500\" fill-opacity=\"1.0\">192.122.12.1</text></svg>",
+                "x": 166,
+                "y": -305,
+                "z": 2
             }
         ],
         "links": [
@@ -2642,5 +2651,5 @@
     "type": "topology",
     "variables": null,
     "version": "2.2.52",
-    "zoom": 60
+    "zoom": 85
 }

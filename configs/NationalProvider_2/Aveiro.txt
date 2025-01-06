@@ -3,10 +3,12 @@ conf t
 int f0/0
 no shut
 ip addr 192.88.123.5 255.255.255.192
+ip ospf 1 area 0
 
 int f0/1
 no shut
 ip addr 192.88.124.1 255.255.255.252
+ip ospf 1 area 0
 
 int Lo0
 ip addr 6.6.6.6 255.255.255.0
