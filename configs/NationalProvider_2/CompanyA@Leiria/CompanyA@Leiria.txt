@@ -12,6 +12,7 @@ ip ospf 1 area 0
 
 int Lo0
 ip addr 4.4.4.4 255.255.255.0
+ip ospf 1 area 0
 
 crypto isakmp policy 30
 authentication pre-share
