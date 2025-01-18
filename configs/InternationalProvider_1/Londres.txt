@@ -34,7 +34,7 @@ crypto ipsec profile LeiriaLondresIpsec
 set transform-set auth_ciphT
 exit
 
-int Tunnel 1
+int Tunnel1
 ip addr 10.1.2.2 255.255.255.252
 tunnel source Lo0
 tunnel destination 4.4.4.4
@@ -42,7 +42,18 @@ tunnel mode ipsec ipv4
 tunnel protection ipsec profile LeiriaLondresIpsec
 exit
 
-ip route 192.88.125.64 255.255.255.192 Tunnel1
+access-list 101 permit ip 192.122.12.0 0.0.0.127 192.88.125.64 0.0.0.63
+
+route-map TUNNEL_ROUTE permit 10
+match ip address 101
+set interface Tunnel1
+exit
+
+int Tunnel1
+ip policy route-map TUNNEL_ROUTE
+exit
+
+no ip route 192.88.125.64 255.255.255.192 Tunnel1
 ip route 0.0.0.0 0.0.0.0 f0/0
 
 router bgp 4589

@@ -17,6 +17,7 @@ ip ospf 1 area 0
 int Lo0
 ip addr 2.2.2.2 255.255.255.0
 ip ospf network point-to-point
+ip ospf 1 area 0
 
 ip as-path access-list 1 permit ^$
 route-map routes-out
@@ -49,7 +50,7 @@ neighbor 192.88.123.5 route-map routesA-out out
 neighbor 192.88.123.5 send-community
 
 router ospf 1
-no redistribute bgp 8657 subnets
+redistribute bgp 8657 subnets
 default-information originate always metric 25
 
 end
