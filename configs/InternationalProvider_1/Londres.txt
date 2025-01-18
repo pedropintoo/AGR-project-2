@@ -53,6 +53,10 @@ int Tunnel1
 ip policy route-map TUNNEL_ROUTE
 exit
 
+int f2/1
+ip policy route-map TUNNEL_ROUTE
+exit
+
 no ip route 192.88.125.64 255.255.255.192 Tunnel1
 ip route 0.0.0.0 0.0.0.0 f0/0
 
