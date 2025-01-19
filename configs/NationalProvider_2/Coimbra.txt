@@ -7,7 +7,6 @@ ip ospf 1 area 0
 
 int Lo0
 ip addr 5.5.5.5 255.255.255.0
-ip ospf network point-to-point
 ip ospf 1 area 0
 
 router bgp 8657

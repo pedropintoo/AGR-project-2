@@ -1,28 +1,17 @@
 conf t
 
-ip cef
-mpls ip
-mpls traffic-eng tunnels
-
 int f0/0
 no shut
 ip addr 192.88.123.5 255.255.255.192
-mpls ip
-mpls traffic-eng tunnels
-ip rsvp bandwidth 4096 4096
 ip ospf 1 area 0
 
 int f0/1
 no shut
 ip addr 192.88.124.1 255.255.255.252
-mpls ip
-mpls traffic-eng tunnels
-ip rsvp bandwidth 4096 4096
 ip ospf 1 area 0
 
 int Lo0
 ip addr 6.6.6.6 255.255.255.0
-ip ospf network point-to-point
 ip ospf 1 area 0
  
 router bgp 8657
@@ -50,8 +39,6 @@ neighbor 192.88.123.2 route-map routes-in in
 
 router ospf 1
 redistribute bgp 8657 subnets
-mpls traffic-eng area 0
-mpls traffic-eng router-id Loopback 0
 
 end
 write
