@@ -24,7 +24,7 @@ ip addr 192.122.12.2 255.255.255.128
 
 
 int Lo0
-ip addr 8.8.8.8 255.255.255.0
+ip addr 8.8.8.8 255.255.255.255
 
 crypto isakmp policy 30
 authentication pre-share
@@ -70,7 +70,7 @@ neighbor 192.1.1.141 remote-as 8657
 neighbor 192.1.1.141 default-originate
 
 network 192.122.12.0 mask 255.255.255.128
-network 8.8.8.0 mask 255.255.255.0
+network 8.8.8.8 mask 255.255.255.255
 
 end 
 write

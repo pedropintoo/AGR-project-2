@@ -7,33 +7,38 @@ mpls traffic-eng tunnels
 int f0/0
 no shut
 ip addr 192.88.124.2 255.255.255.252
-ip ospf 1 area 0
+no ip ospf 1 area 0
 mpls ip 
 mpls traffic-eng tunnels
-bandwidth 10000000
-ip rsvp bandwidth 5000000 5000000
+ip rsvp bandwidth 2000 2000
 
 int f0/1
 no shut
 ip addr 192.88.125.193 255.255.255.192
-ip ospf 1 area 0
+no ip ospf 1 area 0
+mpls ip 
+mpls traffic-eng tunnels
+ip rsvp bandwidth 2000 2000
 
 int Lo0
-ip addr 7.7.7.7 255.255.255.0
-ip ospf 1 area 0
+ip addr 7.7.7.7 255.255.255.255
+no ip ospf 1 area 0
 
 int Tunnel 0
-ip unnumbered Lo0
+ip unnumbered Loopback0
 tunnel destination 3.3.3.3
 tunnel mode mpls traffic-eng
-tunnel mpls traffic-eng autoroute announce
 tunnel mpls traffic-eng bandwidth 2000
+tunnel mpls traffic-eng autoroute announce
 tunnel mpls traffic-eng path-option 1 dynamic
 exit
 
 router ospf 1
 mpls traffic-eng area 0
-mpls traffic-eng router-id Loopback 0
+mpls traffic-eng router-id Loopback0
+network 7.7.7.7 0.0.0.0 area 0
+network 192.88.124.0 0.0.0.3 area 0
+network 192.88.125.192 0.0.0.63 area 0
 
 end
 write

@@ -7,20 +7,22 @@ mpls traffic-eng tunnels
 int f0/0
 no shut
 ip addr 192.88.123.3 255.255.255.192
-ip ospf 1 area 0
+no ip ospf 1 area 0
 mpls ip 
 mpls traffic-eng tunnels
-bandwidth 10000000
-ip rsvp bandwidth 5000000 5000000
+ip rsvp bandwidth 2000 2000
 
 int f0/1
 no shut
 ip addr 192.88.125.65 255.255.255.192
-ip ospf 1 area 0
+no ip ospf 1 area 0
+mpls ip 
+mpls traffic-eng tunnels
+ip rsvp bandwidth 2000 2000
 
 int Lo0
-ip addr 4.4.4.4 255.255.255.0
-ip ospf 1 area 0
+ip addr 4.4.4.4 255.255.255.255
+no ip ospf 1 area 0
 
 crypto isakmp policy 30
 authentication pre-share
@@ -42,7 +44,10 @@ ip route 192.122.12.0 255.255.255.128 Tunnel1
 
 router ospf 1
 mpls traffic-eng area 0
-mpls traffic-eng router-id Loopback 0
+mpls traffic-eng router-id Loopback0
+network 4.4.4.4 0.0.0.0 area 0
+network 192.88.123.0 0.0.0.63 area 0
+network 192.88.125.64 0.0.0.63 area 0
 
 end 
 write

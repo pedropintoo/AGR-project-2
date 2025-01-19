@@ -2117,8 +2117,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
-                "x": 677,
-                "y": 132,
+                "x": 673,
+                "y": 128,
                 "z": 1
             },
             {
@@ -2460,8 +2460,8 @@
                 "symbol": ":/symbols/router.svg",
                 "template_id": "87401d26-c1e8-4f4e-a00f-beb9fdc89d6d",
                 "width": 66,
-                "x": 290,
-                "y": 130,
+                "x": 287,
+                "y": 135,
                 "z": 1
             },
             {
@@ -2669,5 +2669,5 @@
     "type": "topology",
     "variables": null,
     "version": "2.2.52",
-    "zoom": 80
+    "zoom": 78
 }
