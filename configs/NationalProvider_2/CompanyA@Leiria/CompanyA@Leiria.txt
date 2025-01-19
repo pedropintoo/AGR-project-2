@@ -1,9 +1,17 @@
 conf t
 
+ip cef
+mpls ip
+mpls traffic-eng tunnels
+
 int f0/0
 no shut
 ip addr 192.88.123.3 255.255.255.192
 ip ospf 1 area 0
+mpls ip 
+mpls traffic-eng tunnels
+bandwidth 10000000
+ip rsvp bandwidth 5000000 5000000
 
 int f0/1
 no shut
@@ -31,6 +39,10 @@ tunnel protection ipsec profile LeiriaLondresIpsec
 exit
 
 ip route 192.122.12.0 255.255.255.128 Tunnel1
+
+router ospf 1
+mpls traffic-eng area 0
+mpls traffic-eng router-id Loopback 0
 
 end 
 write

@@ -1,5 +1,9 @@
 conf t
 
+ip cef
+mpls ip
+mpls traffic-eng tunnels
+
 int f0/0
 no shut
 ip addr 192.1.1.146 255.255.255.252
@@ -12,6 +16,10 @@ int f1/0
 no shut 
 ip addr 192.88.123.1 255.255.255.192
 ip ospf 1 area 0
+mpls ip 
+mpls traffic-eng tunnels
+bandwidth 10000000
+ip rsvp bandwidth 5000000 5000000
 
 int Lo0
 ip addr 1.1.1.1 255.255.255.0
@@ -52,6 +60,8 @@ neighbor 192.88.123.5 send-community
 router ospf 1
 redistribute bgp 8657 subnets
 default-information originate always metric 50
+mpls traffic-eng area 0
+mpls traffic-eng router-id Loopback 0
 
 end
 write
