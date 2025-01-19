@@ -1,8 +1,15 @@
 conf t
 
+ip cef
+mpls ip
+mpls traffic-eng tunnels
+
 int f0/0
 no shut
 ip addr 192.88.124.6 255.255.255.252
+mpls ip
+mpls traffic-eng tunnels
+ip rsvp bandwidth 4096 4096
 ip ospf 1 area 0
 
 int f0/1
@@ -14,6 +21,21 @@ int Lo0
 ip addr 3.3.3.3 255.255.255.0
 ip ospf network point-to-point
 ip ospf 1 area 0
+
+interface Tunnel0
+ip addr 10.1.1.2 255.255.255.252
+tunnel source Lo0
+no ip unnumbered Lo0
+tunnel destination 7.7.7.7
+tunnel mode mpls traffic-eng
+tunnel mpls traffic-eng autoroute announce
+tunnel mpls traffic-eng bandwidth 2048
+tunnel mpls traffic-eng path-option 1 dynamic
+exit
+
+router ospf 1
+mpls traffic-eng area 0
+mpls traffic-eng router-id Loopback0
 
 end
 write
