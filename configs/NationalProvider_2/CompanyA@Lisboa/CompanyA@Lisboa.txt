@@ -7,32 +7,38 @@ mpls traffic-eng tunnels
 int f0/0
 no shut
 ip addr 192.88.124.6 255.255.255.252
-no ip ospf 1 area 0
 mpls ip 
 mpls traffic-eng tunnels
 ip rsvp bandwidth 2000 2000
+
+access-list 101 permit icmp host 192.88.125.131 host 192.88.125.195
+
+route-map videoConferenceTunnel0 permit 10
+match ip address 101
+set interface Tunnel0
+exit
 
 int f0/1
 no shut
 ip addr 192.88.125.129 255.255.255.192
-no ip ospf 1 area 0
 mpls ip 
 mpls traffic-eng tunnels
 ip rsvp bandwidth 2000 2000
+ip policy route-map videoConferenceTunnel0
 
 int Lo0
 ip addr 3.3.3.3 255.255.255.255
-no ip ospf 1 area 0
 
 int Tunnel 0
 ip unnumbered Loopback0
 tunnel destination 7.7.7.7
 tunnel mode mpls traffic-eng
 tunnel mpls traffic-eng bandwidth 2000
-tunnel mpls traffic-eng autoroute announce
 tunnel mpls traffic-eng path-option 1 dynamic
-
+ip policy route-map videoConferenceTunnel0
 exit
+
+ip route 7.7.7.7 255.255.255.255 Tunnel0
 
 router ospf 1
 mpls traffic-eng area 0

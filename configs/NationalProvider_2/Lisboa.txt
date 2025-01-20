@@ -11,7 +11,6 @@ ip addr 192.1.1.141 255.255.255.252
 int f0/1
 no shut
 ip addr 192.88.123.2 255.255.255.192
-no ip ospf 1 area 0
 mpls ip 
 mpls traffic-eng tunnels
 ip rsvp bandwidth 2000 2000
@@ -19,14 +18,12 @@ ip rsvp bandwidth 2000 2000
 int f1/0
 no shut
 ip addr 192.88.124.5 255.255.255.252
-no ip ospf 1 area 0
 mpls ip 
 mpls traffic-eng tunnels
 ip rsvp bandwidth 2000 2000
 
 int Lo0
 ip addr 2.2.2.2 255.255.255.255
-no ip ospf 1 area 0
 
 ip as-path access-list 1 permit ^$
 route-map routes-out
